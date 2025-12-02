@@ -27,5 +27,13 @@ spec:
       annotations:
         oci.oraclecloud.com/load-balancer-type: "nlb"
         oci-network-load-balancer.oraclecloud.com/security-list-management-mode: "None"
-      spec:
-        externalTrafficPolicy: Local
+
+    ingressClass:
+      enabled: true
+      isDefaultClass: false
+      name: traefik
+
+    logs:
+      general:
+        level: INFO
+
