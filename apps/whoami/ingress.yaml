@@ -5,7 +5,7 @@ metadata:
   labels:
     app: whoami
 spec:
-  ingressClassName: traefik
+  ingressClassName: nginx
   rules:
     - host: who.hanhela.org
       http:
