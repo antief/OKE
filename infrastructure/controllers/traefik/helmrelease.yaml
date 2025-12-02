@@ -26,6 +26,6 @@ spec:
       type: LoadBalancer
       annotations:
         oci.oraclecloud.com/load-balancer-type: "nlb"
-        oci-network-load-balancer.oraclecloud.com/internal: "false"
+        oci-network-load-balancer.oraclecloud.com/security-list-management-mode: "None"
       spec:
         externalTrafficPolicy: Local
