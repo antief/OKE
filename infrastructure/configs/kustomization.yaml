@@ -6,4 +6,5 @@ resources:
   - externalsecret-cloudflare-api-token.yaml
   - cert-manager-clusterissuer-dns.yaml
   - certificate-hanhela-org.yaml
+  - traefik-tlsstore.yaml
 
