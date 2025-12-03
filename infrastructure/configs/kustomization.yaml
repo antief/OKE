@@ -5,4 +5,5 @@ resources:
   - clustersecretstore.sops.yaml
   - externalsecret-cloudflare-api-token.yaml
   - cert-manager-clusterissuer-dns.yaml
+  - certificate-hanhela-org.yaml
 

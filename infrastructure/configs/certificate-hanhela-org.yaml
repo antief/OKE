@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: hanhela-org-wildcard
+  namespace: traefik
+spec:
+  secretName: hanhela-org-tls
+  issuerRef:
+    name: letsencrypt-dns
+    kind: ClusterIssuer
+  commonName: hanhela.org
+  dnsNames:
+    - hanhela.org
+    - '*.hanhela.org'
+  usages:
+    - digital signature
+    - key encipherment
