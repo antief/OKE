@@ -2,10 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: whoami
+  namespace: whoami
   labels:
     app: whoami
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-dns
 spec:
   ingressClassName: traefik
+  tls:
+    - hosts:
+        - who.hanhela.org
+      secretName: hanhela-org-wildcard-tls
   rules:
     - host: who.hanhela.org
       http:
