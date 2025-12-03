@@ -23,23 +23,19 @@ spec:
 
     service:
       enabled: true
-#      type: LoadBalancer
-#      annotations:
-#        oci.oraclecloud.com/load-balancer-type: "nlb"
-#        oci-network-load-balancer.oraclecloud.com/security-list-management-mode: "None"
+      loadBalancerIP: 129.151.207.53
+      type: LoadBalancer
+      annotations:
+        oci.oraclecloud.com/load-balancer-type: "nlb"
+        oci-network-load-balancer.oraclecloud.com/security-list-management-mode: "None"
 
     ingressClass:
       enabled: true
       isDefaultClass: false
       name: traefik
 
-#    logs:
-#      general:
-#        level: INFO
+    logs:
+      general:
+        level: INFO
 
-        type: LoadBalancer
-        loadBalancerIP: 129.151.207.53
-        annotations:
-          oci.oraclecloud.com/load-balancer-type: nlb 
-          oci-network-load-balancer.oraclecloud.com/security-list-management-mode: "None"
 
