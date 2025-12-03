@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: nextcloud
 resources:
   - namespace.yaml
-  - pvc.yaml
+#  - pvc.yaml
