@@ -23,9 +23,9 @@ spec:
 
     service:
       enabled: true
-      loadBalancerIP: 129.151.207.53
       type: LoadBalancer
       annotations:
+        oci.oraclecloud.com/reserved-ips: "129.151.207.53"
         oci.oraclecloud.com/load-balancer-type: "nlb"
         oci-network-load-balancer.oraclecloud.com/security-list-management-mode: "None"
 
