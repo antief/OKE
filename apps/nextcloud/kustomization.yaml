@@ -3,4 +3,7 @@ kind: Kustomization
 namespace: nextcloud
 resources:
   - namespace.yaml
-#  - pvc.yaml
+  - pvc.yaml
+  - helmrepo.yaml
+  - helmrelease.yaml
+  - ingress.yaml
