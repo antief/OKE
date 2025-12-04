@@ -31,8 +31,8 @@ spec:
 
     persistence:
       enabled: true
-      size: 100Gi
-      storageClassName: oci-bv-uhp
+      size: 150Gi
+      storageClassName: oci-bv
 
     nextcloud:
       extraEnv:
