@@ -6,3 +6,5 @@ resources:
   - helmrepo.yaml
   - helmrelease.yaml
   - ingress.yaml
+  - redis-helmrepo.yaml
+  - redis-helmrelease.yaml
