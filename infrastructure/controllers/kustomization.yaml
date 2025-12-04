@@ -4,4 +4,3 @@ resources:
   - traefik
   - cert-manager
   - external-secrets
-  - longhorn

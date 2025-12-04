@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - clustersecretstore.sops.yaml
   - externalsecret-cloudflare-api-token.yaml
-  - externalsecret-mumble-db.yaml
   - externalsecret-nextcloud-db.yaml
   - cert-manager-clusterissuer-dns.yaml
   - certificate-hanhela-org.yaml
