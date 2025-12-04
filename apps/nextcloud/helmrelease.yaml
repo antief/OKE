@@ -64,7 +64,12 @@ spec:
         value: "cloud.hanhela.org"
       - name: TRUSTED_PROXIES
         value: "10.0.0.0/8"
-      - name: REDIS_HOST
-        value: nextcloud-redis-master
-      - name: REDIS_HOST_PORT
-        value: "6379"
+
+    externalRedis:
+      enabled: true
+      host: redis-master
+      port: 6379
+      database: 0
+      password: ""            
+
+
