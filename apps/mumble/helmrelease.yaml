@@ -4,15 +4,13 @@ metadata:
   name: mumble
   namespace: mumble
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: mumble-server
-      sourceRef:
-        kind: HelmRepository
-        name: mumble
-        namespace: mumble
-      interval: 12h
+  interval: 12h
+
+  chartRef:
+    kind: OCIRepository
+    name: JuniorJPDJ-mumble
+    namespace: mumble
+
   install:
     remediation:
       retries: 3

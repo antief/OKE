@@ -1,8 +1,11 @@
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+kind: OCIRepository
 metadata:
-  name: mumble
+  name: JuniorJPDJ-mumble
   namespace: mumble
 spec:
-  interval: 30m
+  interval: 12h
   url: https://github.com/JuniorJPDJ/charts/tree/master/charts/mumble-server
+  ref:
+    tag: "0.1.31"
+  
