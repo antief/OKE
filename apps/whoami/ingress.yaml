@@ -5,6 +5,8 @@ metadata:
   namespace: whoami
   labels:
     app: whoami
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: traefik-hsts@kubernetescrd
 spec:
   ingressClassName: traefik
   rules:
