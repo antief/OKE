@@ -4,20 +4,22 @@ metadata:
   name: nextcloud-redis
   namespace: nextcloud
 spec:
+  interval: 12h
   releaseName: redis
   targetNamespace: nextcloud
+
   chartRef:
     kind: OCIRepository
     name: bitnami-redis
     namespace: nextcloud
-  interval: 12h
-    version: 24.0.0
+
   install:
     remediation:
       retries: 3
   upgrade:
     remediation:
       retries: 3
+
   values:
     architecture: standalone
     auth:
@@ -25,4 +27,6 @@ spec:
     master:
       persistence:
         enabled: false
-    replicaCount: 0
+    replica:
+      replicaCount: 0
+
