@@ -22,6 +22,10 @@ spec:
       retries: 3
   timeout: 10m
   values:
+    externalDatabase:
+      enabled: true
+      type: mysql
+
     ingress:
       enabled: false
 
@@ -30,46 +34,44 @@ spec:
       size: 100Gi
       storageClassName: oci-bv-uhp
 
-    env:
-      - name: MYSQL_HOST
-        valueFrom:
-          secretKeyRef:
-            name: nextcloud-db
-            key: MYSQL_HOST
-      - name: MYSQL_PORT
-        valueFrom:
-          secretKeyRef:
-            name: nextcloud-db
-            key: MYSQL_PORT
-      - name: MYSQL_DATABASE
-        valueFrom:
-          secretKeyRef:
-            name: nextcloud-db
-            key: MYSQL_DATABASE
-      - name: MYSQL_USER
-        valueFrom:
-          secretKeyRef:
-            name: nextcloud-db
-            key: MYSQL_USER
-      - name: MYSQL_PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: nextcloud-db
-            key: MYSQL_PASSWORD
-      - name: NEXTCLOUD_TRUSTED_DOMAINS
-        value: "cloud.hanhela.org"
-      - name: OVERWRITEPROTOCOL
-        value: "https"
-      - name: OVERWRITEHOST
-        value: "cloud.hanhela.org"
-      - name: TRUSTED_PROXIES
-        value: "10.0.0.0/8"
+    nextcloud:
+      extraEnv:
+        - name: NEXTCLOUD_TRUSTED_DOMAINS
+          value: "cloud.hanhela.org"
+        - name: OVERWRITEPROTOCOL
+          value: "https"
+        - name: OVERWRITEHOST
+          value: "cloud.hanhela.org"
+        - name: TRUSTED_PROXIES
+          value: "10.0.0.0/8"
 
     externalRedis:
       enabled: true
       host: redis-master
       port: 6379
       database: 0
-      password: ""            
+      password: ""
+
+  valuesFrom:
+    - kind: Secret
+      name: nextcloud-db
+      valuesKey: MYSQL_HOST
+      targetPath: externalDatabase.host
+    - kind: Secret
+      name: nextcloud-db
+      valuesKey: MYSQL_PORT
+      targetPath: externalDatabase.port
+    - kind: Secret
+      name: nextcloud-db
+      valuesKey: MYSQL_DATABASE
+      targetPath: externalDatabase.database
+    - kind: Secret
+      name: nextcloud-db
+      valuesKey: MYSQL_USER
+      targetPath: externalDatabase.username
+    - kind: Secret
+      name: nextcloud-db
+      valuesKey: MYSQL_PASSWORD
+      targetPath: externalDatabase.password
 
 
