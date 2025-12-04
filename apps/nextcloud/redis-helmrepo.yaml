@@ -6,4 +6,4 @@ metadata:
 spec:
   interval: 12h
   url: oci://registry-1.docker.io/bitnamicharts/redis
-  semver: ">=24.0.0 <25.0.0"
+  tag: "24.0.0"
