@@ -22,6 +22,8 @@ spec:
     remediation:
       retries: 3
   values:
+    image:
+      defaultRegistry: docker.io
     defaultSettings:
       defaultReplicaCount: 1
     persistence:
