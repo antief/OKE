@@ -8,7 +8,7 @@ spec:
 
   chartRef:
     kind: OCIRepository
-    name: JuniorJPDJ-mumble
+    name: juniorjpdj-mumble
     namespace: mumble
 
   install:
