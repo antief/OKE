@@ -20,7 +20,9 @@ spec:
   values:
     deployment:
       replicas: 1
-
+    additionalArguments:
+      - "--entryPoints.web.http.redirections.entryPoint.to=websecure"
+      - "--entryPoints.web.http.redirections.entryPoint.scheme=https"
     service:
       enabled: true
       type: LoadBalancer
