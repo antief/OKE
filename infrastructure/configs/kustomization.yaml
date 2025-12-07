@@ -7,4 +7,4 @@ resources:
   - cert-manager-clusterissuer-dns.yaml
   - certificate-hanhela-org.yaml
   - traefik-tlsstore.yaml
-
+  - apps-namespace.yaml
