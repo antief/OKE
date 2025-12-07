@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - clustersecretstore.sops.yaml
-  - externalsecret-cloudflare-api-token.yaml
-  - externalsecret-nextcloud-db.yaml
-  - cert-manager-clusterissuer-dns.yaml
-  - certificate-hanhela-org.yaml
+  #- externalsecret-cloudflare-api-token.yaml
+  #- externalsecret-nextcloud-db.yaml
+ # - cert-manager-clusterissuer-dns.yaml
+ # - certificate-hanhela-org.yaml
   - traefik-tlsstore.yaml
   - apps-namespace.yaml
